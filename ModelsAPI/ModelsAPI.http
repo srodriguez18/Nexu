@@ -1,0 +1,6 @@
+@ModelsAPI_HostAddress = http://localhost:5294
+
+GET {{ModelsAPI_HostAddress}}/
+Accept: application/json
+
+###
