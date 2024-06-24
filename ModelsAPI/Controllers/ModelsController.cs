@@ -29,7 +29,14 @@ namespace ModelsAPI.Controllers
 
         [HttpPut]
         [Route("/{id}")]
-        public async Task<string> Put(int id, [FromBody] string body)
+        /// <summary>
+        /// Update Average Price for Model
+        /// </summary>
+        /// <param></param>
+        /// <example>2</example>
+        /// <returns></returns>
+
+        public async Task<IActionResult> Put(int id, [FromBody] string body)
         {
             string averageString = JObject.Parse(body)["average_price"].ToString();
             if (int.TryParse(averageString, out int average))
@@ -38,15 +45,15 @@ namespace ModelsAPI.Controllers
                 if(model != null) { 
                     model.average_price = average;
                     await _context.SaveChangesAsync();
-                    return "Model Updated!";
+                    return Ok("Model Updated!");
                 } else
                 {
-                    return "Model not found";
+                    return BadRequest("Model not found");
                 }
             }
             else
             {
-                return "Invalid value";
+                return BadRequest("Invalid value");
             }
 
         }

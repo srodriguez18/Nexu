@@ -7,10 +7,10 @@ namespace ModelsAPI.Entity
     public class Models
     {
         [Key]
-        public int id { get; set; }
-        public string name { get; set; }
-        public int average_price { get; set; }
-        public int brand_id { get; set; }
+        public int? id { get; set; }
+        public string? name { get; set; }
+        public int? average_price { get; set; }
+        public int? brand_id { get; set; }
 
     }
 }

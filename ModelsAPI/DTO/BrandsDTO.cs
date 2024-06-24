@@ -1,7 +1,9 @@
 ﻿namespace Backend.DTO
 {
-    public class UpdateBrand
+    public class BrandAv
     {
-        string average_price {  get; set; }
+        public int id {  get; set; }
+        public string name { get; set; }
+        public int average_price {  get; set; }
     }
 }
